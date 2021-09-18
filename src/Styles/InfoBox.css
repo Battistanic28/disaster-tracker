@@ -1,0 +1,11 @@
+.info-box{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 400px;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    
+}
