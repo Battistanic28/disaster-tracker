@@ -1,8 +1,9 @@
 import "../Styles/InfoBox.css";
 
-function InfoBox({info}) {
+function InfoBox({info, setIsClicked}) {
+
     return(
-        <div className="info-box">
+        <div onClick={setIsClicked(true)} className="info-box">
             <h1>Event Info</h1>
             <p>{info.id}</p>
             <p>{info.title}</p>

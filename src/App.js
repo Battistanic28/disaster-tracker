@@ -1,18 +1,18 @@
-import MyMap from "./MapComponents/MyMap.js";
-import axios from "axios";
-import './App.css';
+import './Styles/App.css';
 import { useEffect, useState } from "react";
+import NavBar from "./Nav/NavBar";
+import MyMap from "./MapComponents/MyMap.js";
+import EonetAPI from "./API/EonetAPI";
+import Loader from "./Loader";
 
 function App() {
-  const URL = "https://eonet.sci.gsfc.nasa.gov/api/v3/events?category=wildfires&status=open";
   const [eventsData, setEventsData] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getEvents = async () => {
       setLoading(true)
-      const res = await axios.get(URL);
-      const {events} = res.data
+      const events = await EonetAPI.getGlobalEvents('wildfires');
       setEventsData(events)
       setLoading(false)
     }
@@ -21,7 +21,8 @@ function App() {
 
   return (
     <>
-    {!loading ? <MyMap eventsData={eventsData} /> : <h1>Loading...</h1>}
+    <NavBar></NavBar>
+    {!loading ? <MyMap eventsData={eventsData} /> : <Loader />}
     </>
   );
 }

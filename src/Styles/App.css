@@ -1,3 +1,17 @@
+body {
+  background-color: #333;
+}
+
+.loading-spinner {
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 200px;
+}
 
 .App {
   text-align: center;

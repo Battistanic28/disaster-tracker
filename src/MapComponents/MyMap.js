@@ -12,10 +12,11 @@ export function MyMap({ eventsData }) {
 
 	const [ center, setCenter ] = useState([ 40.014984, -105.270546 ]);
 	const [eventInfo, setEventInfo] = useState();
+	const [isClicked, setIsClicked] = useState(false);
 	const [ zoom, setZoom ] = useState(11);
 	const color = '#FF0000';
 
-	function populateEventInfo(evt) {
+	function infoPopUp(evt) {
 		setEventInfo({id: evt.id, title: evt.title})
 	}
 
@@ -42,7 +43,7 @@ export function MyMap({ eventsData }) {
 					onClick={() => setEventInfo({id: event.id, title: event.title})} />;
 			})}
 		</Map>
-			{eventInfo && <InfoBox info={eventInfo}></InfoBox>}
+			{eventInfo && <InfoBox setIsClicked={setIsClicked} info={eventInfo}></InfoBox>}
 		</>
 	);
 }
