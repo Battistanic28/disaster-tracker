@@ -1,9 +1,13 @@
 import './Styles/App.css';
 import { useEffect, useState } from "react";
-import NavBar from "./Nav/NavBar";
-import MyMap from "./MapComponents/MyMap.js";
 import EonetAPI from "./API/EonetAPI";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MyMap from "./MapComponents/MyMap.js";
+import Login from "./Auth/Login";
+import Signup from "./Auth/Signup";
+import NavBar from "./NavBar";
 import Loader from "./Loader";
+
 
 function App() {
   const [eventsData, setEventsData] = useState([])
@@ -21,8 +25,23 @@ function App() {
 
   return (
     <>
-    <NavBar></NavBar>
-    {!loading ? <MyMap eventsData={eventsData} /> : <Loader />}
+      <BrowserRouter>
+          <NavBar></NavBar>
+          <main>
+              <Switch>
+                  <Route exact path="/">
+                      {!loading ? <MyMap eventsData={eventsData} /> : <Loader />}
+                  </Route>
+                  <Route exact path="/login">
+                    <Login></Login>
+                  </Route>
+                  <Route exact path="/signup">
+                    <Signup></Signup>
+                  </Route>
+                  <Route exact path="/"></Route>
+              </Switch>
+          </main>
+      </BrowserRouter>    
     </>
   );
 }

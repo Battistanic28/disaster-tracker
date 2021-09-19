@@ -4,21 +4,18 @@ import InfoBox from './InfoBox';
 
 export function MyMap({ eventsData }) {
 
-	// get user Location
-    // navigator.geolocation.getCurrentPosition(function(position) {
-	// 	console.log("Latitude is :", position.coords.latitude);
-	// 	console.log("Longitude is :", position.coords.longitude);
-	//   });
+
 
 	const [ center, setCenter ] = useState([ 40.014984, -105.270546 ]);
 	const [eventInfo, setEventInfo] = useState();
-	const [isClicked, setIsClicked] = useState(false);
 	const [ zoom, setZoom ] = useState(11);
 	const color = '#FF0000';
 
-	function infoPopUp(evt) {
-		setEventInfo({id: evt.id, title: evt.title})
-	}
+	// Refactor Marker onClick
+
+	// function infoPopUp(evt) {
+	// 	setEventInfo({id: evt.id, title: evt.title})
+	// }
 
 	return (
 		<>
@@ -43,7 +40,7 @@ export function MyMap({ eventsData }) {
 					onClick={() => setEventInfo({id: event.id, title: event.title})} />;
 			})}
 		</Map>
-			{eventInfo && <InfoBox setIsClicked={setIsClicked} info={eventInfo}></InfoBox>}
+			{eventInfo && <InfoBox info={eventInfo}></InfoBox>}
 		</>
 	);
 }
