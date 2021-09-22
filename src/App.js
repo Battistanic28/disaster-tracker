@@ -21,7 +21,6 @@ function App() {
       setLoading(true)
       const events = await EonetAPI.getGlobalEvents('wildfires');
       const posts = await NewsFeed.getPosts();
-      console.log(posts)
       setEventsData(events)
       setPosts(posts)
       setLoading(false)

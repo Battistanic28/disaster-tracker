@@ -17,7 +17,12 @@ class NewsFeed {
             console.error("API Error:", err.response);
         }
     }
-    // API Routes
+    // API User Routes
+    static async registerUser(data) {
+        const res = await this.request(`users/register`, data, "post");
+        return res;
+    }
+
     static async getUsers() {
         const res = await this.request(`users`);
         return res.users
