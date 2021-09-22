@@ -1,4 +1,6 @@
 import "../Styles/InfoBox.css";
+import EventFeed from "../EventFeed.js";
+
 
 function InfoBox({info}) {
 
@@ -10,7 +12,6 @@ function InfoBox({info}) {
 
             <button>Report concern</button>
             <button>See available assistance</button>
-
         </div>
     )
 }
