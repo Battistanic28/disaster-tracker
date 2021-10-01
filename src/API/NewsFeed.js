@@ -28,8 +28,20 @@ class NewsFeed {
         return res.users
     }
 
+    // API User Routes
     static async getPosts() {
         const res = await this.request(`posts`);
+        return res.posts
+    }
+
+    static async getPostsByEventId(id) {
+        const res = await this.request(`posts/${id}`);
+        console.log(res)
+        return res.posts
+    }
+
+    static async createPost(data) {
+        const res = await this.request(`posts`, data, "post");
         return res.posts
     }
 }

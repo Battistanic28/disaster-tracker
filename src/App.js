@@ -4,7 +4,7 @@ import EonetAPI from "./API/EonetAPI";
 import NewsFeed from "./API/NewsFeed";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MyMap from "./MapComponents/MyMap.js";
-import EventFeed from "./EventFeed.js";
+import EventFeed from "./Feed/EventFeed.js";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import NavBar from "./NavBar";
@@ -43,9 +43,10 @@ function App() {
                   <Route exact path="/signup">
                     <Signup></Signup>
                   </Route>
-                  <Route exact path="/feed">
-                    {!loading ? <EventFeed posts={posts} /> : <Loader />}
+                  <Route exact path="/:eventId">
+                    {!loading ? <EventFeed /> : <Loader />}
                   </Route>
+                  <Route exact path="/profile"></Route>
               </Switch>
           </main>
       </BrowserRouter>    

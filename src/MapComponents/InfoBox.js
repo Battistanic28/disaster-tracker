@@ -1,8 +1,19 @@
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import "../Styles/InfoBox.css";
-import EventFeed from "../EventFeed.js";
+import EventFeed from "../Feed/EventFeed.js";
 
 
 function InfoBox({info}) {
+    const [view, setView] = useState('')
+    const history = useHistory();
+
+    function handleClick(view) {
+        return function reroute() {
+            history.push(view)
+            setView(view)
+        }
+    }
 
     return(
         <div className="info-box">
@@ -10,8 +21,12 @@ function InfoBox({info}) {
             <p>{info.id}</p>
             <p>{info.title}</p>
 
-            <button>Report concern</button>
-            <button>See available assistance</button>
+            <button onClick={handleClick(info.id)}>Report concern</button>
+            <button onClick={handleClick('posts')}>See available assistance</button>
+
+            {view === 'form' && <h1>Form</h1>}
+            {view === 'posts' && <h1>Posts</h1>}
+
         </div>
     )
 }

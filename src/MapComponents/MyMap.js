@@ -5,7 +5,6 @@ import InfoBox from './InfoBox';
 export function MyMap({ eventsData }) {
 
 
-
 	const [ center, setCenter ] = useState([ 40.014984, -105.270546 ]);
 	const [eventInfo, setEventInfo] = useState();
 	const [ zoom, setZoom ] = useState(11);
