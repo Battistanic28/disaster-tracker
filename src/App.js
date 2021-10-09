@@ -9,12 +9,13 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import NavBar from "./NavBar";
 import Loader from "./Loader";
-
+import UserContext from "./Auth/UserContext";
 
 function App() {
   const [eventsData, setEventsData] = useState([])
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
+  const [token, setToken] = useState();
 
   useEffect(() => {
     const getEvents = async () => {
@@ -31,6 +32,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <UserContext.Provider value={{token, setToken}}>
           <NavBar></NavBar>
           <main>
               <Switch>
@@ -49,6 +51,7 @@ function App() {
                   <Route exact path="/profile"></Route>
               </Switch>
           </main>
+          </UserContext.Provider>
       </BrowserRouter>    
     </>
   );

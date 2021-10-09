@@ -19,16 +19,22 @@ class NewsFeed {
     }
     // API User Routes
     static async registerUser(data) {
-        const res = await this.request(`users/register`, data, "post");
+        const res = await this.request(`auth/register/`, data, "post");
         return res;
     }
 
+    static async loginUser(data) {
+        const res = await this.request(`auth/token/`, data, "post");
+        console.log(res)
+        return res;
+    }
+    
+    // API User Routes
     static async getUsers() {
         const res = await this.request(`users`);
         return res.users
     }
 
-    // API User Routes
     static async getPosts() {
         const res = await this.request(`posts`);
         return res.posts
@@ -36,7 +42,6 @@ class NewsFeed {
 
     static async getPostsByEventId(id) {
         const res = await this.request(`posts/${id}`);
-        console.log(res)
         return res.posts
     }
 
