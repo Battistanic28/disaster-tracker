@@ -10,12 +10,15 @@ import Signup from "./Auth/Signup";
 import NavBar from "./NavBar";
 import Loader from "./Loader";
 import UserContext from "./Auth/UserContext";
+import jwt from "jsonwebtoken";
+
 
 function App() {
   const [eventsData, setEventsData] = useState([])
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(false)
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(localStorage.getItem('token'));
+
 
   useEffect(() => {
     const getEvents = async () => {
@@ -28,6 +31,7 @@ function App() {
     }
     getEvents()
   }, [])
+
 
   return (
     <>

@@ -1,10 +1,21 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import NewsFeed from "../API/NewsFeed.js";
+import UserContext from "../Auth/UserContext";
+import jwt from "jsonwebtoken";
 
 
-function Signup() {
+function PostForm({eventId}) {
 
-    const [formData, setFormData] = useState("");
+    const {token} = useContext(UserContext);
+    const {username} = jwt.decode(token);
+    
+    const initialState = {
+        event_id: eventId,
+        user_id: username,
+        post: ""
+    }
+    
+    const [formData, setFormData] = useState(initialState);
 
     const handleChange = e => {
         const {name, value} = e.target;
@@ -31,14 +42,14 @@ function Signup() {
             <div>
                 <form>
                     <textarea 
-                        name="text"
+                        name="post"
                         onChange={handleChange}>
                     </textarea>
-                    {formData && <p>{240-formData.text.length} characters remaining.</p>}
+                    {/* {formData && <p>{240-formData.text.length} characters remaining.</p>} */}
                     <button  onClick={handleSubmit} type="submit">Publish!</button>
                 </form>
             </div>
         )
     };
 
-export default Signup;
+export default PostForm;

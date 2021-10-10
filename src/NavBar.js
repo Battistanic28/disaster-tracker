@@ -10,9 +10,9 @@ function NavBar() {
     const history = useHistory();
 
     function logout() {
+        localStorage.removeItem('token')
+        setToken("")
         history.push("/")
-        setToken("");
-        alert("you have been logged out");
     }
 
     if(token) {

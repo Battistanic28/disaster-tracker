@@ -6,6 +6,7 @@ import CommentThread from "./CommentThread";
 import PostForm from "./PostForm";
 import Loader from "../Loader";
 import UserContext from "../Auth/UserContext";
+import jwt from "jsonwebtoken";
 import "../Styles/EventFeed.css";
 
 
@@ -38,7 +39,7 @@ function EventFeed() {
       return(
           <div>
               <h3>{eventId}: Community Updates</h3>
-              {token && <PostForm />}
+              {token && <PostForm eventId={eventId} />}
               {posts.length > 0 ? posts.map(post => (
                   <CommentThread post={post}></CommentThread>
               )) : "Be the first to commment."}

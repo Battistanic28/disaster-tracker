@@ -47,7 +47,7 @@ class NewsFeed {
 
     static async createPost(data) {
         const res = await this.request(`posts`, data, "post");
-        return res.posts
+        return res.post
     }
 }
 

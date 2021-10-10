@@ -27,8 +27,10 @@ function Login() {
         e.preventDefault();
         let res = await NewsFeed.loginUser(formData);
         if (res) {
+            // Set token and add to localStorage
             setToken(res.token);
-            alert("success!")
+            localStorage.setItem('token', res.token)
+            // Clear form
             setFormData(initialState);
 
         } else {
