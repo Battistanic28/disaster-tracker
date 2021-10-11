@@ -1,10 +1,16 @@
 
 .event-feed {
-    background-color: #333;
+    margin: auto auto;
+    margin-top: 50px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+
 }
 
 .event-feed h3{
-    padding-top: 2rem;
     text-align: center;
     color: snow;
 }
