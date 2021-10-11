@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import NewsFeed from "../API/NewsFeed.js";
 import UserContext from "../Auth/UserContext";
 import jwt from "jsonwebtoken";
+import "../Styles/PostForm.css";
 
 
 function PostForm({eventId}) {
@@ -39,9 +40,9 @@ function PostForm({eventId}) {
     }
 
         return(
-            <div>
+            <div className="comment-form">
                 <form>
-                    <textarea 
+                    <textarea placeholder="What's on your mind?"
                         name="post"
                         onChange={handleChange}>
                     </textarea>

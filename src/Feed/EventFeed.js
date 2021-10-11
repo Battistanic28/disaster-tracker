@@ -37,14 +37,13 @@ function EventFeed() {
       }
 
       return(
-          <div>
+          <div className="event-feed">
               <h3>{eventId}: Community Updates</h3>
               {token && <PostForm eventId={eventId} />}
               {posts.length > 0 ? posts.map(post => (
                   <CommentThread post={post}></CommentThread>
               )) : "Be the first to commment."}
               <button onClick={handleClick}>Back to Map</button>
-
           </div>
       )
 

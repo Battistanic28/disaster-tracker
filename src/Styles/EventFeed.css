@@ -1,3 +1,10 @@
-body {
+
+.event-feed {
+    background-color: #333;
+}
+
+.event-feed h3{
+    padding-top: 2rem;
+    text-align: center;
     color: snow;
 }

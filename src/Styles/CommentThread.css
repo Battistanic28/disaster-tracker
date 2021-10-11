@@ -1,9 +1,36 @@
 
-.userComment{
+.user-comment {
     margin: auto;
-    background-color: gray;
-    width: 75%;
+    background-color: white;
+    max-width: 75%;
     margin-bottom: .5rem;
+    border-radius: 5px;
     border-style: solid;
-    border-color: snow;
+    border-width: 1px;
+    border-color: gray;
+    padding: 25px 25px 15px 25px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info p {
+    width: 100%;
+}
+
+.profile-image {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 50px;
+    border-radius: 50%;
+    border-color: gray;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.username {
+    display: inline-block;
+    font-weight: 600;
 }
