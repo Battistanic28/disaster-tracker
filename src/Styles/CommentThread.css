@@ -20,6 +20,16 @@
     width: 100%;
 }
 
+.user-info a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+.user-info a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}
+
 .profile-image {
     display: inline-block;
     margin-right: 10px;

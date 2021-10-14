@@ -7,9 +7,10 @@ function CommentThread({post}) {
         <div className="user-comment">
             <div className="user-info">
                 <img className="profile-image" src="/default-profile.png" alt="profile-image"></img>
-                <span className="username">@{post.userId}</span>
+                <a href="/#" className="username">@{post.userId}</a>
             </div>
             <p>{post.post}</p>
+            <p>{post.timestamp}</p>
         </div>
     )
 }

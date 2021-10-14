@@ -19,7 +19,7 @@ export function MyMap({ eventsData }) {
 	return (
 		<>
 		<Map
-			height={700}
+			height={1000}
 			center={center}
 			zoom={zoom}
 			onBoundsChanged={({ center, zoom }) => {

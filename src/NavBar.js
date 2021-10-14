@@ -21,7 +21,7 @@ function NavBar() {
         return(
             <div className="nav-container">
                 <div className="navbr-brand">
-                    <a className="navbar-brand" href="/">🔥 Tracker</a>
+                    <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
                     <a href="#">Contact</a>
@@ -35,7 +35,7 @@ function NavBar() {
         return(
             <div className="nav-container">
                 <div className="navbr-brand">
-                    <a className="navbar-brand" href="/">🔥 Tracker</a>
+                    <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
                     <a href="#">Contact</a>
