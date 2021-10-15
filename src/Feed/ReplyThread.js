@@ -1,15 +1,15 @@
 import { React } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import NewsFeed from "../API/NewsFeed";
 import UserReply from "./UserReply";
 import ReplyForm from "./ReplyForm";
 import Loader from "../Loader";
-// import UserContext from "../Auth/UserContext";
+import UserContext from "../Auth/UserContext";
 import "../Styles/EventFeed.css";
 
 
 function ReplyThread({postId}) {
-    // const {token} = useContext(UserContext);
+    const {token} = useContext(UserContext);
     const [newReply, setNewReply] = useState([])
     const [replies, setReplies] = useState([])
     const [loading, setLoading] = useState(false)
@@ -34,7 +34,7 @@ function ReplyThread({postId}) {
               {replies.length > 0 ? replies.map(reply => (
                   <UserReply reply={reply}></UserReply>
               )) : "Be the first to commment."}
-              <ReplyForm postId={postId} setNewReply={setNewReply}></ReplyForm>
+              {token && <ReplyForm postId={postId} setNewReply={setNewReply}></ReplyForm>}
           </div>
       )
 }
