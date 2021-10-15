@@ -29,12 +29,12 @@ class NewsFeed {
         return res;
     }
     
-    // API User Routes
     static async getUsers() {
         const res = await this.request(`users`);
         return res.users
     }
 
+    // API User Routes
     static async getPosts() {
         const res = await this.request(`posts`);
         return res.posts
@@ -49,6 +49,18 @@ class NewsFeed {
         const res = await this.request(`posts`, data, "post");
         return res.post
     }
+
+    // API Replies Routes
+    static async getRepliesByPostId(id) {
+        const res = await this.request(`replies/${id}`);
+        return res.posts
+    }
+
+    static async createReply(data) {
+        const res = await this.request(`replies`, data, "post");
+        return res.post
+    }
+
 }
 
 export default NewsFeed;

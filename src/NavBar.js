@@ -24,8 +24,8 @@ function NavBar() {
                     <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
-                    <a href="#">Contact</a>
-                    <a onClick={logout}>Logout</a>
+                    <a href="/">Contact</a>
+                    <a href="/" onClick={logout}>Logout</a>
                     <a href={`/${username}`}>{username}</a>
                     <a className="active" href="/">Active Events</a>
                 </div>
@@ -38,7 +38,7 @@ function NavBar() {
                     <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
-                    <a href="#">Contact</a>
+                    <a href="/">Contact</a>
                     <a href="/signup">Signup</a>
                     <a href="/login">Login</a>
                     <a className="active" href="/">Active Events</a>

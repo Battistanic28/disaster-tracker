@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from "react-router-dom";
 import "../Styles/InfoBox.css";
-import EventFeed from "../Feed/EventFeed.js";
-import PostForm from "../Feed/PostForm.js";
 
 
 function InfoBox({info}) {
-    const [view, setView] = useState('')
     const history = useHistory();
 
     function handleClick() {

@@ -1,11 +1,9 @@
 import './Styles/App.css';
 import { useEffect, useState } from "react";
 import EonetAPI from "./API/EonetAPI";
-import NewsFeed from "./API/NewsFeed";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MyMap from "./MapComponents/MyMap.js";
 import EventFeed from "./Feed/EventFeed.js";
-import UserPost from "./Feed/UserPost.js";
 import ReplyThread from "./Feed/ReplyThread.js";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";

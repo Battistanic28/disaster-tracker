@@ -30,7 +30,7 @@ function EventFeed() {
           setLoading(false)
         }
         getEvents()
-      }, [newPost])
+      }, [newPost, eventId])
 
       if (loading) {
           return (<Loader />)
