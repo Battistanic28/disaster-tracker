@@ -44,3 +44,12 @@
     display: inline-block;
     font-weight: 600;
 }
+
+.icon {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+.icon:hover {
+    color: royalblue;
+}

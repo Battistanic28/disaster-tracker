@@ -10,15 +10,8 @@ function InfoBox({info}) {
     const history = useHistory();
 
     function handleClick() {
-        history.push(`/${info.id}`)
+        history.push(`event/${info.id}`)
     }
-    // function handleClick(view) {
-    //     return function reroute() {
-    //         console.log(view)
-    //         history.push(view)
-    //         setView(view)
-    //     }
-    // }
 
     return(
         <div className="info-box">

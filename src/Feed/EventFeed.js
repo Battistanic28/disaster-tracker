@@ -2,11 +2,10 @@ import { React } from "react";
 import { useEffect, useState, useContext } from "react";
 import {useParams, useHistory} from "react-router-dom";
 import NewsFeed from "../API/NewsFeed";
-import CommentThread from "./CommentThread";
+import UserPost from "./UserPost";
 import PostForm from "./PostForm";
 import Loader from "../Loader";
 import UserContext from "../Auth/UserContext";
-import jwt from "jsonwebtoken";
 import "../Styles/EventFeed.css";
 
 
@@ -14,6 +13,7 @@ function EventFeed() {
 
     const {token} = useContext(UserContext);
     const {eventId} = useParams();
+    const [newPost, setNewPost] = useState([])
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(false)
     const history = useHistory();
@@ -30,7 +30,7 @@ function EventFeed() {
           setLoading(false)
         }
         getEvents()
-      }, [])
+      }, [newPost])
 
       if (loading) {
           return (<Loader />)
@@ -39,9 +39,9 @@ function EventFeed() {
       return(
           <div className="event-feed">
               <h3>{eventId}: Community Updates</h3>
-              {token && <PostForm eventId={eventId} />}
+              {token && <PostForm setNewPost={setNewPost} eventId={eventId} />}
               {posts.length > 0 ? posts.map(post => (
-                  <CommentThread post={post}></CommentThread>
+                  <UserPost post={post}></UserPost>
               )) : "Be the first to commment."}
               <button onClick={handleClick}>Back to Map</button>
           </div>

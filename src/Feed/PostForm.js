@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import "../Styles/PostForm.css";
 
 
-function PostForm({eventId}) {
+function PostForm({eventId, setNewPost}) {
 
     const {token} = useContext(UserContext);
     const {username} = jwt.decode(token);
@@ -32,6 +32,7 @@ function PostForm({eventId}) {
         let res = await NewsFeed.createPost(formData);
         if (res) {
             alert("success!")
+            setNewPost(formData)
             setFormData("");
 
         } else {
