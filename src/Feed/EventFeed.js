@@ -19,7 +19,7 @@ function EventFeed() {
     const history = useHistory();
 
     function handleClick() {
-        history.push(`/`)
+        history.push(`/map`)
     }
 
     useEffect(() => {

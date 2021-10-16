@@ -1,6 +1,8 @@
+
 body {
-  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/8/20/doshSF.jpg')
-  /* color: #282c34; */
+  /* background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/8/20/doshSF.jpg') */
+  background-color: #282c34;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .loading-spinner {

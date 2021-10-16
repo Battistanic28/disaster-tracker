@@ -27,7 +27,7 @@ function NavBar() {
                     <a href="/">Contact</a>
                     <a href="/" onClick={logout}>Logout</a>
                     <a href={`/${username}`}>{username}</a>
-                    <a className="active" href="/">Active Events</a>
+                    <a className="active" href="/map">Active Events</a>
                 </div>
             </div>
         )
@@ -41,7 +41,7 @@ function NavBar() {
                     <a href="/">Contact</a>
                     <a href="/signup">Signup</a>
                     <a href="/login">Login</a>
-                    <a className="active" href="/">Active Events</a>
+                    <a className="active" href="/map">Active Events</a>
                 </div>
             </div>
         )

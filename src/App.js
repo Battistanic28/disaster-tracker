@@ -2,6 +2,7 @@ import './Styles/App.css';
 import { useEffect, useState } from "react";
 import EonetAPI from "./API/EonetAPI";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Homepage from "./Common/Homepage.js";
 import MyMap from "./MapComponents/MyMap.js";
 import EventFeed from "./Feed/EventFeed.js";
 import ReplyThread from "./Feed/ReplyThread.js";
@@ -37,6 +38,9 @@ function App() {
           <main>
               <Switch>
                   <Route exact path="/">
+                    <Homepage></Homepage>
+                  </Route>
+                  <Route exact path="/map">
                       {!loading ? <MyMap eventsData={eventsData} /> : <Loader />}
                   </Route>
                   <Route exact path="/login">
