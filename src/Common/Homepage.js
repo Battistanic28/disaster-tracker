@@ -9,7 +9,7 @@ function Homepage() {
     return (
         <>
         <div className="image-div">
-            <div className="welcome-container">
+            <div className="welcome-container">                
                 <h1>Welcome to FlameBuzz🔥</h1>
                 <p>Keeping communities close when disaster strikes</p>
                 <a href="/login" class="button">Login</a>

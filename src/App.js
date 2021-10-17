@@ -50,10 +50,10 @@ function App() {
                     <Signup></Signup>
                   </Route>
                   <Route exact path="/event/:eventId">
-                    {!loading ? <EventFeed /> : <Loader />}
+                      {!loading ? <EventFeed /> : <Loader />}
                   </Route>
                   <Route exact path="/comments/reply">
-                    {!loading ? <ReplyThread /> : <Loader />}
+                      {!loading ? <ReplyThread /> : <Loader />}
                   </Route>
                   <Route exact path="/user/:username"></Route>
               </Switch>
