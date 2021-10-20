@@ -25,7 +25,6 @@ class NewsFeed {
 
     static async loginUser(data) {
         const res = await this.request(`auth/token/`, data, "post");
-        console.log(res)
         return res;
     }
     

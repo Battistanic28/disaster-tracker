@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import NewsFeed from "../API/NewsFeed.js";
 import "../Styles/Auth.css";
+import { Formik } from 'formik';
 
 
 function Signup() {
@@ -28,7 +29,6 @@ function Signup() {
         e.preventDefault();
         let res = await NewsFeed.registerUser(formData);
         if (res) {
-            alert("success!")
             setFormData(initialState);
 
         } else {

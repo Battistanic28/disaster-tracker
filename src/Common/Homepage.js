@@ -12,9 +12,9 @@ function Homepage() {
             <div className="welcome-container">                
                 <h1>Welcome to FlameBuzz🔥</h1>
                 <p>Keeping communities close when disaster strikes</p>
-                <a href="/login" class="button">Login</a>
-                <a href="/signup" class="button">Signup</a>
-                <a href="/map" class="button">View active events</a>
+                <a href="/login" className="button">Login</a>
+                <a href="/signup" className="button">Signup</a>
+                <a href="/map" className="button">View active events</a>
             </div>
         </div>
         <div className="info-container">
