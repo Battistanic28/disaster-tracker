@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import NewsFeed from "../API/NewsFeed.js";
 import "../Styles/Auth.css";
 import UserContext from './UserContext';
@@ -43,6 +44,7 @@ const validate = values => {
 
 function Signup() {
 
+    const history = useHistory();
 	const { setToken } = useContext(UserContext);
 
     const formik = useFormik({
@@ -61,6 +63,7 @@ function Signup() {
                 setToken(newUser.token);
                 localStorage.setItem('token', newUser.token)
                 alert('User created!')
+                history.push("/map");
             } else {
                 alert(`Error: Username or email is already in use.`)
             }

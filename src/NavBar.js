@@ -26,7 +26,7 @@ function NavBar() {
                 <div className="navbar-nav">
                     <a href="/">Contact</a>
                     <a href="/" onClick={logout}>Logout</a>
-                    <a href={`/${username}`}>{username}</a>
+                    <a href={`/user/${username}`}>{username}</a>
                     <a className="active" href="/map">Active Events</a>
                 </div>
             </div>

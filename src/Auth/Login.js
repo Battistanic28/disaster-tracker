@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useHistory } from "react-router-dom";
 import NewsFeed from '../API/NewsFeed';
 import '../Styles/Auth.css';
 import UserContext from './UserContext';
@@ -23,6 +24,7 @@ const validate = (values) => {
 
 const Login = () => {
 
+    const history = useHistory();
 	const { setToken } = useContext(UserContext);
 
 	const formik = useFormik({
@@ -36,6 +38,7 @@ const Login = () => {
             if (res) {
                 setToken(res.token);
                 localStorage.setItem('token', res.token)
+                history.push("/map");
             } else {
                 alert(`Error: Invalid username or password`)
             }
@@ -70,8 +73,7 @@ const Login = () => {
 				{formik.touched.password && formik.errors.password ? (
 					<div className="form-error">{formik.errors.password}</div>
 				) : null}
-
-				<button type="submit">Submit</button>
+                    <button type="submit">Submit</button>
 			</form>
 		</div>
 	);

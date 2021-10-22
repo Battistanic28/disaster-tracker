@@ -36,16 +36,16 @@ function EventFeed() {
           return (<Loader />)
       }
 
-      return(
-          <div className="event-feed">
-              <h3>{eventId}: Community Updates</h3>
-              {token && <PostForm setNewPost={setNewPost} eventId={eventId} />}
-              {posts.length > 0 ? posts.map(post => (
-                  <UserPost post={post}></UserPost>
-              )) : "Be the first to commment."}
-              <button onClick={handleClick}>Back to Map</button>
-          </div>
-      )
+    return(
+        <div className="event-feed">
+            <h3>{eventId}: Community Updates</h3>
+            {token && <PostForm setNewPost={setNewPost} eventId={eventId} />}
+            {posts.length > 0 ? posts.map(post => (
+                <UserPost post={post}></UserPost>
+            )) : "Be the first to commment."}
+            <button onClick={handleClick}>Back to Map</button>
+        </div>
+    )
 
 }
 

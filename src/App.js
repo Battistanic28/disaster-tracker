@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import EonetAPI from "./API/EonetAPI";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Homepage from "./Common/Homepage.js";
+import UserProfile from "./Common/UserProfile.js";
 import MyMap from "./MapComponents/MyMap.js";
 import EventFeed from "./Feed/EventFeed.js";
 import ReplyThread from "./Feed/ReplyThread.js";
@@ -55,7 +56,9 @@ function App() {
                   <Route exact path="/comments/reply">
                       {!loading ? <ReplyThread /> : <Loader />}
                   </Route>
-                  <Route exact path="/user/:username"></Route>
+                  <Route exact path="/user/:username">
+                    <UserProfile></UserProfile>
+                  </Route>
               </Switch>
           </main>
           </UserContext.Provider>

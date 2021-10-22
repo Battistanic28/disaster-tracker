@@ -33,6 +33,11 @@ class NewsFeed {
         return res.users
     }
 
+    static async getUserInfo(username) {
+        const res = await this.request(`users/${username}`);
+        return res.user
+    }
+
     // API User Routes
     static async getPosts() {
         const res = await this.request(`posts`);
