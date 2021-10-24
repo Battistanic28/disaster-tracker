@@ -48,7 +48,6 @@ export function MyMap({ eventsData }) {
 			<ZoomControl></ZoomControl>
 		</Map>
 			{eventInfo && <InfoBox info={eventInfo}></InfoBox>}
-			<p>Powered by PigeonMaps</p>
 		</>
 	);
 }

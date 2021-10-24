@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import "./Styles/NavBar.css";
 import jwt from "jsonwebtoken";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import UserContext from "./Auth/UserContext";
 
 function NavBar() {
@@ -24,10 +24,10 @@ function NavBar() {
                     <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
-                    <a href="/">Contact</a>
-                    <a href="/" onClick={logout}>Logout</a>
-                    <a href={`/user/${username}`}>{username}</a>
-                    <a className="active" href="/map">Active Events</a>
+                    <NavLink exact to="/contact">Contact</NavLink>
+                    <NavLink exact to="/" onClick={logout}>Logout</NavLink>
+                    <NavLink exact to={`/user/${username}`}>{username}</NavLink>
+                    <NavLink exact to="/map">Active Events</NavLink>
                 </div>
             </div>
         )
@@ -35,13 +35,13 @@ function NavBar() {
         return(
             <div className="nav-container">
                 <div className="navbr-brand">
-                    <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
+                    <NavLink className="navbar-brand" to="/">🔥 FlameBuzz</NavLink>
                 </div>
                 <div className="navbar-nav">
-                    <a href="/">Contact</a>
-                    <a href="/signup">Signup</a>
-                    <a href="/login">Login</a>
-                    <a className="active" href="/map">Active Events</a>
+                    <NavLink exact to="/">Contact</NavLink>
+                    <NavLink exact to="/signup">Signup</NavLink>
+                    <NavLink exact to="/login">Login</NavLink>
+                    <NavLink exact to="/map">Active Events</NavLink>
                 </div>
             </div>
         )
