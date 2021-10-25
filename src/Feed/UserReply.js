@@ -11,7 +11,6 @@ function UserReply({reply}) {
                 </div>
                 <p>{reply.comment}</p>
                 <p className="date">created on: {(reply.date).substring(0,10)}</p>
-                {/* <hr /> */}
             </div>
         )
 }

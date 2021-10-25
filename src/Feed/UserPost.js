@@ -20,7 +20,9 @@ function UserPost({post}) {
                 <a href="/#" className="username">@{post.userId}</a>
             </div>
             <p>{post.post}</p>
-            <p>created on: {(post.date).substring(0,10)}</p>
+            {/* <p>created on: {(post.date).substring(0,10)}</p> */}
+            <p>created on: {post.date}</p>
+
             <FontAwesomeIcon onClick={toggler} className="icon" icon={faComments} size="lg" />
             <hr />
             {isClicked && <ReplyThread postId={post.postId}></ReplyThread>}
