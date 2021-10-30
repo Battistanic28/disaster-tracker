@@ -42,8 +42,10 @@ function EventFeed() {
             {token && <PostForm setNewPost={setNewPost} eventId={eventId} />}
             {posts.length > 0 ? posts.map(post => (
                 <UserPost post={post}></UserPost>
-            )) : "Be the first to commment."}
-            <a className="button" onClick={handleClick}>Back to Map</a>
+            )) : <p className="no-comments">Be the first to commment.</p>}
+                <div className="btn-wrapper">
+                    <a className="return-button" onClick={handleClick}>Back to Map</a>    
+                </div>
         </div>
     )
 

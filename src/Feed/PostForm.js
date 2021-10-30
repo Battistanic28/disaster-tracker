@@ -2,54 +2,62 @@ import React, {useState, useContext} from "react";
 import NewsFeed from "../API/NewsFeed.js";
 import UserContext from "../Auth/UserContext";
 import jwt from "jsonwebtoken";
+import { useFormik } from 'formik';
 import "../Styles/PostForm.css";
+
+const validate = (values) => {
+	const errors = {};
+	if (!values.post) {
+		errors.post = 'Field cannot be blank.';
+	}
+
+	return errors;
+};
 
 
 function PostForm({eventId, setNewPost}) {
 
     const {token} = useContext(UserContext);
     const {username} = jwt.decode(token);
-    
-    const initialState = {
-        event_id: eventId,
-        user_id: username,
-        post: ""
-    }
-    
-    const [formData, setFormData] = useState(initialState);
 
-    const handleChange = e => {
-
-        const {name, value} = e.target;
-        setFormData(data => ({
-            ...data,
-            [name]: value
-        }
-        ))
-    }
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-            let res = await NewsFeed.createPost(formData);
+    const formik = useFormik({
+		initialValues: {
+            event_id: eventId,
+            user_id: username,
+			post: ''
+		},
+		validate,
+		onSubmit: async (values) => {
+            let res = await NewsFeed.createPost(values);
             if (res) {
-                alert("success!")
-                setNewPost(formData)
-                setFormData("");
+                setNewPost(values)
     
             } else {
                 alert(`Error: ${res}`)
             }
-    }
+		}
+	});
+
 
         return(
             <div className="comment-form">
-                <form>
-                    <textarea placeholder="What's on your mind?"
+                <form onSubmit={formik.handleSubmit}>
+                    <textarea 
+                        placeholder="What's on your mind?"
+                        id="post"
                         name="post"
-                        onChange={handleChange}>
+                        type="text"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.post}>
                     </textarea>
-                    {/* {formData && <p>{240-formData.text.length} characters remaining.</p>} */}
-                    <a className="button" onClick={handleSubmit} type="submit">Publish!</a>
+
+                {formik.touched.post && formik.errors.post ? (
+					<div className="form-error">{formik.errors.post}</div>
+				) : null}
+                    <div className="btn-wrapper">
+                        <button className="submit-btn" type="submit">Publish!</button>
+                    </div>
                 </form>
             </div>
         )

@@ -52,3 +52,7 @@
 .form-error {
 	color: red;
 }
+
+input[type=text] {
+	font-family: 'Montserrat', sans-serif;
+  }

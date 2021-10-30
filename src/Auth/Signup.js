@@ -72,6 +72,7 @@ function Signup() {
    
       return (
           <div className="form-div">
+              <h1>Sign up</h1>
                <form onSubmit={formik.handleSubmit}>
                <label htmlFor="username">Username</label>
                <input

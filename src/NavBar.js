@@ -24,7 +24,6 @@ function NavBar() {
                     <a className="navbar-brand" href="/">🔥 FlameBuzz</a>
                 </div>
                 <div className="navbar-nav">
-                    <NavLink exact to="/contact">Contact</NavLink>
                     <NavLink exact to="/" onClick={logout}>Logout</NavLink>
                     <NavLink exact to={`/user/${username}`}>{username}</NavLink>
                     <NavLink exact to="/map">Active Events</NavLink>
@@ -38,8 +37,7 @@ function NavBar() {
                     <NavLink className="navbar-brand" to="/">🔥 FlameBuzz</NavLink>
                 </div>
                 <div className="navbar-nav">
-                    <NavLink exact to="/">Contact</NavLink>
-                    <NavLink exact to="/signup">Signup</NavLink>
+                    <NavLink exact to="/signup">Sign up</NavLink>
                     <NavLink exact to="/login">Login</NavLink>
                     <NavLink exact to="/map">Active Events</NavLink>
                 </div>
