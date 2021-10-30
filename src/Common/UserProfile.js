@@ -30,7 +30,7 @@ function UserProfile() {
     
     return(
         <div className="user-profile">
-            <h1>User Profile Page</h1>
+            <h1>User Profile:</h1>
             <p>Username: {userInfo.username}</p>
             <p>Name: {userInfo.firstName} {userInfo.lastName}</p>
             <p>Email: {userInfo.email}</p>

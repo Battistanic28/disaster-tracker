@@ -43,7 +43,7 @@ function EventFeed() {
             {posts.length > 0 ? posts.map(post => (
                 <UserPost post={post}></UserPost>
             )) : "Be the first to commment."}
-            <button onClick={handleClick}>Back to Map</button>
+            <a className="button" onClick={handleClick}>Back to Map</a>
         </div>
     )
 

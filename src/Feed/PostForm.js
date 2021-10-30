@@ -19,6 +19,7 @@ function PostForm({eventId, setNewPost}) {
     const [formData, setFormData] = useState(initialState);
 
     const handleChange = e => {
+
         const {name, value} = e.target;
         setFormData(data => ({
             ...data,
@@ -29,15 +30,15 @@ function PostForm({eventId, setNewPost}) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        let res = await NewsFeed.createPost(formData);
-        if (res) {
-            alert("success!")
-            setNewPost(formData)
-            setFormData("");
-
-        } else {
-            alert(`Error: ${res}`)
-        }
+            let res = await NewsFeed.createPost(formData);
+            if (res) {
+                alert("success!")
+                setNewPost(formData)
+                setFormData("");
+    
+            } else {
+                alert(`Error: ${res}`)
+            }
     }
 
         return(
@@ -48,7 +49,7 @@ function PostForm({eventId, setNewPost}) {
                         onChange={handleChange}>
                     </textarea>
                     {/* {formData && <p>{240-formData.text.length} characters remaining.</p>} */}
-                    <button  onClick={handleSubmit} type="submit">Publish!</button>
+                    <a className="button" onClick={handleSubmit} type="submit">Publish!</a>
                 </form>
             </div>
         )

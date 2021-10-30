@@ -17,11 +17,11 @@ function UserPost({post}) {
         <div className="user-comment">
             <div className="user-info">
                 <img className="profile-image" src="/default-profile.png" alt="profile"></img>
-                <a href="/#" className="username">@{post.userId}</a>
+                <a href={`/user/${post.userId}`} className="username">@{post.userId}</a>
             </div>
             <p>{post.post}</p>
-            {/* <p>created on: {(post.date).substring(0,10)}</p> */}
-            <p>created on: {post.date}</p>
+            <p>created on: {(post.date).substring(0,10)}</p>
+            {/* <p>created on: {post.date}</p> */}
 
             <FontAwesomeIcon onClick={toggler} className="icon" icon={faComments} size="lg" />
             <hr />
