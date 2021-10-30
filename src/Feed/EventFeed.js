@@ -7,6 +7,7 @@ import PostForm from "./PostForm";
 import Loader from "../Loader";
 import UserContext from "../Auth/UserContext";
 import "../Styles/EventFeed.css";
+import { v4 as uuid } from 'uuid';
 
 
 function EventFeed() {
@@ -37,7 +38,7 @@ function EventFeed() {
             <h3>{eventId}: Community Updates</h3>
             {token && <PostForm setNewPost={setNewPost} eventId={eventId} />}
             {posts.length > 0 ? posts.map(post => (
-                <UserPost post={post}></UserPost>
+                <UserPost key={uuid()} post={post}></UserPost>
             )) : <p className="no-comments">Be the first to commment.</p>}
                 <div className="btn-wrapper">
                     <a className="return-button" href="/map">Back to Map</a>    

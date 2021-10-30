@@ -5,6 +5,13 @@ Flambuzz is a socal networking platform for natural disaster relief. Users can s
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The backend server for this application was created using Express.js
 
+Deployed version of this app can be found at 
+
+## Run Loacally
+
+At the root level of each directory, run ```npm install``` in the command line.\
+Dependencies must be installed separately for frontend and backend.
+
 ## API
 
 Flamebuzz relies on two APIs. One to fetch the natural disaster geodata, one to maintain users/comments.

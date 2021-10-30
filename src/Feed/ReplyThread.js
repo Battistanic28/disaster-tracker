@@ -5,6 +5,7 @@ import UserReply from "./UserReply";
 import ReplyForm from "./ReplyForm";
 import Loader from "../Loader";
 import UserContext from "../Auth/UserContext";
+import { v4 as uuid } from 'uuid';
 import "../Styles/EventFeed.css";
 
 
@@ -32,7 +33,7 @@ function ReplyThread({postId}) {
       return(
           <div>
               {replies.length > 0 ? replies.map(reply => (
-                  <UserReply reply={reply}></UserReply>
+                  <UserReply key={uuid()} reply={reply}></UserReply>
               )) : "Be the first to commment."}
               {token && <ReplyForm postId={postId} setNewReply={setNewReply}></ReplyForm>}
           </div>
