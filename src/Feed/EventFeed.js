@@ -44,7 +44,7 @@ function EventFeed() {
                 <UserPost post={post}></UserPost>
             )) : <p className="no-comments">Be the first to commment.</p>}
                 <div className="btn-wrapper">
-                    <a className="return-button" onClick={handleClick}>Back to Map</a>    
+                    <a className="return-button" href="/map">Back to Map</a>    
                 </div>
         </div>
     )
