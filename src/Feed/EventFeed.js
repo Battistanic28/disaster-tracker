@@ -1,6 +1,6 @@
 import { React } from "react";
 import { useEffect, useState, useContext } from "react";
-import {useParams, useHistory} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import NewsFeed from "../API/NewsFeed";
 import UserPost from "./UserPost";
 import PostForm from "./PostForm";
@@ -16,11 +16,7 @@ function EventFeed() {
     const [newPost, setNewPost] = useState([])
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(false)
-    const history = useHistory();
 
-    function handleClick() {
-        history.push(`/map`)
-    }
 
     useEffect(() => {
         const getEvents = async () => {

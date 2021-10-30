@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import NewsFeed from "../API/NewsFeed.js";
 import UserContext from "../Auth/UserContext";
 import jwt from "jsonwebtoken";
