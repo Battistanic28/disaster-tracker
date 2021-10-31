@@ -1,11 +1,12 @@
 # Flamebuzz 
 
-Flambuzz is a socal networking platform for natural disaster relief. Users can signup, identify wildfires in their area, and communicate with members of their community. Using Flamebuzz
+Flambuzz is a socal networking platform for natural disaster relief. Users can signup, identify wildfires in their area, and communicate with members of their community.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 The backend server for this application was created using Express.js
 
-Deployed version of this app can be found at 
+Deployed version of this app can be found at [https://flamebuzz.surge.sh/](https://flamebuzz.surge.sh/).
 
 ## Run Loacally
 
