@@ -18,9 +18,9 @@ export function MyMap({ eventsData }) {
 	// 	}
 	//   }
 
-	const [ center, setCenter ] = useState([ 40.808886, -96.707775 ]);
+	const [ center, setCenter ] = useState([38.984834, -105.793289]);
 	const [eventInfo, setEventInfo] = useState();
-	const [ zoom, setZoom ] = useState(5);
+	const [ zoom, setZoom ] = useState(7);
 	const color = '#FF0000';
 
 
@@ -35,15 +35,19 @@ export function MyMap({ eventsData }) {
 				setZoom(zoom);
 			}}>
 			{eventsData.map((event) => {
-				const lat = event.geometry[0].coordinates[1];
-				const lng = event.geometry[0].coordinates[0];
+				const lat = event.geometry.coordinates[1];
+				const lng = event.geometry.coordinates[0];
 
 				return <Marker 
 					key={[lat, lng]} 
 					width={50} 
 					anchor={[lat, lng]} 
 					color={color} 
-					onClick={() => setEventInfo({id: event.id, title: event.title})} />;
+					onClick={() => setEventInfo({
+						id: event.properties.id,
+						title: event.properties.title,
+						description: event.properties.description
+					})} />;
 			})}
 			<ZoomControl></ZoomControl>
 		</Map>

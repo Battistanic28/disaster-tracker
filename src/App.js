@@ -23,12 +23,13 @@ function App() {
   useEffect(() => {
     const getEvents = async () => {
       setLoading(true)
-      const events = await EonetAPI.getGlobalEvents('wildfires');
+      const events = await EonetAPI.getColoradoEvents();
       setEventsData(events)
       setLoading(false)
     }
     getEvents()
   }, [])
+
 
 
   return (

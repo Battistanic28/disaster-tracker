@@ -9,9 +9,11 @@ import axios from "axios";
 
 class EonetAPI {
     
-    static async getGlobalEvents(category) {
-        const res = await axios.get(`https://eonet.sci.gsfc.nasa.gov/api/v3/events?category=${category}&status=open`);
-        return res.data.events;
+    static async getColoradoEvents() {
+        const bbox = '-109,41,-102,37' // Colorado boundaries
+        const res = await axios.get(`https://eonet.gsfc.nasa.gov/api/v3/events/geojson?bbox=${bbox}`);
+        console.log(res.data.features)
+        return res.data.features;
     }
 }
 
