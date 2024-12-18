@@ -10,6 +10,8 @@ Deployed version of this app can be found at [https://flamebuzz.surge.sh/](https
 
 ## Run Loacally
 
+This project has not been well maintained and uses an outdated node version. If you are seeing errors when running `npm install`, make sure to `nvm use` the node version specified in the `.nvmrc` file.
+
 At the root level of each directory, run ```npm install``` in the command line.\
 Dependencies must be installed separately for frontend and backend.
 
